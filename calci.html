@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang=en>
+<head>
+<title>A Simple Calculator</title>
+<center>
+<script>
+function add(){
+var a,b,c;
+a=Number(document.getElementById("first").value);
+b=Number(document.getElementById("second").value);
+c=a+b;
+document.getElementById("answer").value=c;
+}
+function sub(){
+var a,b,c;
+a=Number(document.getElementById("first").value);
+b=Number(document.getElementById("second").value);
+c=a-b;
+document.getElementById("answer").value=c;
+}
+function mul(){
+var a,b,c;
+a=Number(document.getElementById("first").value);
+b=Number(document.getElementById("second").value);
+c=a*b;
+document.getElementById("answer").value=c;
+}
+function div(){
+var a,b,c;
+a=Number(document.getElementById("first").value);
+b=Number(document.getElementById("second").value);
+c=a/b;
+document.getElementById("answer").value=c;
+}
+</script>
+<style>
+div {
+  background-color: lightgrey;
+  width: 300px;
+  border: 4px solid black;
+  padding: 50px;
+  margin: 20px;
+  box-shadow: 10px 10px 8px 10px #888888;
+}
+</style>
+</head>
+    <body>
+      <div>
+      <h1>
+    value1 :<input id="first"><br><br>
+    value2 :<input id="second"><br><br>
+
+        <button Onclick="add()">add</button>
+        <button Onclick="sub()">sub</button>
+        <button Onclick="mul()">mul</button>
+        <button Onclick="div()">div</button>
+        <br>
+        <input id="answer"></h1>
+        </div>
+    </body>
+</center>
+</head>
+</html>

@@ -10,7 +10,8 @@ todoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteTodo);
 filterOption.addEventListener("click", filterTodo);
 
-//Functions
+
+ 
 
 function addTodo(e) {
   //Prevent natural behaviour
@@ -18,7 +19,9 @@ function addTodo(e) {
   //Create todo div
   const todoDiv = document.createElement("div");
   todoDiv.classList.add("todo");
+  
   //Create list
+  
   const newTodo = document.createElement("li");
   newTodo.innerText = todoInput.value;
   //Save to local - do this last
@@ -41,6 +44,8 @@ function addTodo(e) {
   //attach final Todo
   todoList.appendChild(todoDiv);
 }
+
+
 
 function deleteTodo(e) {
   const item = e.target;
@@ -78,18 +83,30 @@ function filterTodo(e) {
         break;
       case "uncompleted":
         if (!todo.classList.contains("completed")) {
-          todo.style.display = "flex";
+          todo.style.display = "block";
         } else {
           todo.style.display = "none";
         }
     }
   });
 }
+function saveLocalTodos(sign) {
+    let todos;
+    if (localStorage.getItem("sign") == null) {
+      alert("Name can't be blank");  
+        return false;
+    } else {
+      todos = JSON.parse(localStorage.getItem("todos"));
+    }
+    todos.push(todo);
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }
 
 function saveLocalTodos(todo) {
   let todos;
-  if (localStorage.getItem("todos") === null) {
-    todos = [];
+  if (localStorage.getItem("todos") == null) {
+    alert("Name can't be blank");  
+      return false;
   } else {
     todos = JSON.parse(localStorage.getItem("todos"));
   }
@@ -98,8 +115,9 @@ function saveLocalTodos(todo) {
 }
 function removeLocalTodos(todo) {
   let todos;
-  if (localStorage.getItem("todos") === null) {
-    todos = [];
+  if (localStorage.getItem("todos") == null) {
+    alert("Name can't be blank");  
+      return false;
   } else {
     todos = JSON.parse(localStorage.getItem("todos"));
   }
@@ -110,8 +128,9 @@ function removeLocalTodos(todo) {
 
 function getTodos() {
   let todos;
-  if (localStorage.getItem("todos") === null) {
-    todos = [];
+  if (localStorage.getItem("todos") == null) {
+    alert("Name can't be blank");  
+      return false;
   } else {
     todos = JSON.parse(localStorage.getItem("todos"));
   }

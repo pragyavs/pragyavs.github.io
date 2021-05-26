@@ -59,7 +59,7 @@ nav ul li a {
   position: relative;
   display: block;
   font-size: 12px;
-  color: #999999;
+  color:blue;
   letter-spacing: 0.1em;
   font-weight: 500;
   line-height: 14px;
@@ -225,9 +225,17 @@ nav ul li a {
 # Hero
 --------------------------------------------------------------*/
 #hero {
-  background: url("../img/Beautiful_sunset.gif") repeat scroll center center/cover;
+  background: url("../img/sunset.gif") repeat scroll center center/cover;
   height: 100vh;
   width: 100%;
+}
+.main-middle-container{
+  /* background-color:white; */
+  display:flex;
+  width:700px
+}
+.pp{
+  border-radius:200px;
 }
 
 #hero .hero-content {
@@ -361,6 +369,7 @@ nav ul li a {
   max-width: 80%;
   margin-bottom: 0;
   text-align: left;
+  text-color:black;
 }
 
 /*--------------------------------------------------------------
